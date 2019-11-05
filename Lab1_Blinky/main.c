@@ -427,10 +427,10 @@ void StartDefaultTask(void const * argument)
   /* Infinite loop */
   for(;;)
   {
-	  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_SET);
-	  osDelay(2000);
-	  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_RESET);
-	  osDelay(500);
+	  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_SET); //turn light on
+	  osDelay(2000); //wait 2s
+	  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_RESET); //turn light off
+	  osDelay(500); //wait .5s
 
   }
   /* USER CODE END 5 */ 
