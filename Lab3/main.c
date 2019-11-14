@@ -448,10 +448,8 @@ void startGreenTask(void const * argument)
   {
 	  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);
 	  osSemaphoreWait(criticalResourceSemaphoreHandle, -1);
-	  //HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);
 	  AccessSharedData();
 	  osSemaphoreRelease(criticalResourceSemaphoreHandle);
-	  //osDelay(DelayTimeMsec);
 	  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_RESET);
 	  osDelay(DelayTimeMsec);
   }
@@ -476,10 +474,8 @@ void startRedTask(void const * argument)
   {
 	  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_SET);
 	  osSemaphoreWait(criticalResourceSemaphoreHandle, -1);
-	  //HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_SET);
 	  AccessSharedData();
 	  osSemaphoreRelease(criticalResourceSemaphoreHandle);
-	  //osDelay(DelayTimeMsec);
 	  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_RESET);
 	  osDelay(DelayTimeMsec);
   }
